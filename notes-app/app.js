@@ -8,10 +8,9 @@ const yargs = require('yargs');
 const argv = yargs.argv;
 
 // Accessing the command-line argument
-let command = process.argv[2];
+let command = argv._[0];
 
 console.log('Command:', command);
-console.log('Process', process.argv);
 console.log('Yargs', argv)
 
 if (command === 'add') {
@@ -19,9 +18,9 @@ if (command === 'add') {
 } else if (command === 'list') {
     notes.getAll();
 } else if (command === 'read') {
-    console.log('Reading note')
+    notes.getNote(argv.title);
 } else if (command === 'remove') {
-    console.log('Removing note')
+    notes.removeNote(argv.title);
 } else {
     console.log('Command not recognized')
 }
