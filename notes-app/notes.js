@@ -1,6 +1,12 @@
-console.log('hello notes');
+const addNote = (title, body) => {
+    console.log('Adding note', title, body);
+};
 
-module.exports.addNote = () => {
-    return 'New note'
+const getAll = () => {
+    console.log('Getting all notes')
 }
 
+module.exports = {
+    addNote,
+    getAll
+};
